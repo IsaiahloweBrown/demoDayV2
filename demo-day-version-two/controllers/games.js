@@ -62,7 +62,9 @@ module.exports = {
       await Game.findOneAndUpdate(
         { _id: req.params.id },
         {
-          $inc: { users: 1 },
+          //user: req.user.id
+          //adds user twice if clicked more than once 
+          $addToSet: { users: req.user.id },
         }
       );
       console.log("users +1");
