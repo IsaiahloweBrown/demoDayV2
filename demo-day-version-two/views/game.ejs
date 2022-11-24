@@ -30,6 +30,34 @@
     <!-- form for Comments -->
     <div>
     
+
+        <form action="/game/createResult/<%= game.id %>" method="POST">
+          <input type="number" placeholder="number of points" name="points">
+          <input type="number" placeholder="number of assists" name="assists">
+          <input type="number" placeholder="number of rebounds" name="rebounds">
+          <button type="submit">Submit</button>
+        </form>
+   
+    </div>
+    <section class="addedToCart text-center">
+      <h3>Delivered results</h3>
+      <ul class="results">
+      <% for(var i=0; i<result.length; i++) {%>
+
+          <li class="">
+        
+            <span><%= result[i].userName %></span>
+            <span><%= result[i].points %></span>
+            <span><%= result[i].assists %></span>
+            <span><%= result[i].rebounds %></span>
+         
+          </li>
+
+      <% } %>
+      </ul>
+    </section>
+    <div>
+    
     
     
     <div class="col-6 mt-5">

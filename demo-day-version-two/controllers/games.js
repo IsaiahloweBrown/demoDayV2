@@ -6,7 +6,7 @@
 
 const cloudinary = require("../middleware/cloudinary");
 const Game = require("../models/Game");
-const Comment = require("../models/Comment");
+const Result = require("../models/Result");
 
 module.exports = {
   getProfile: async (req, res) => {
@@ -28,8 +28,8 @@ module.exports = {
   getGame: async (req, res) => {
     try {
       const game = await Game.findById(req.params.id);
-      const comment = await Comment.find({Game: req.params.id});
-      res.render("Game.ejs", { game: game, user: req.user, comment: comment });
+      const result = await Result.find({game: req.params.id});
+      res.render("Game.ejs", { game: game, user: req.user, result: result });
       
     } catch (err) {
       console.log(err);
@@ -46,7 +46,7 @@ module.exports = {
         image: result.secure_url,
         cloudinaryId: result.public_id,
         gameType: req.body.gameType,
-        users: 0,
+        users: req.user.userName,
         location: req.body.location,
         dateAndTime: req.body.dateAndTime,
         user: req.user.id,
@@ -64,7 +64,7 @@ module.exports = {
         {
           //user: req.user.id
           //adds user twice if clicked more than once 
-          $addToSet: { users: req.user.id },
+          $addToSet: { users: req.user.userName },
         }
       );
       console.log("users +1");
@@ -85,6 +85,25 @@ module.exports = {
       res.redirect("/profile");
     } catch (err) {
       res.redirect("/profile");
+    }
+  },
+  createResult: async (req, res) => {
+    try {
+      // Upload image to cloudinary
+    
+
+      await Result.create({
+        game: req.params.id,
+        user: req.user.id,
+        userName: req.user.userName,
+        points: req.body.points,
+        assists: req.body.assists,
+        rebounds: req.body.rebounds,
+      });
+      console.log("Result has been added!");
+      res.redirect(`/profile`);
+    } catch (err) {
+      console.log(err);
     }
   },
   

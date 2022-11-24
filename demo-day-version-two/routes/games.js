@@ -14,9 +14,9 @@ router.put("/joinGame/:id", gamesController.joinGame);
 
 router.delete("/deleteGame/:id", gamesController.deleteGame);
 
-// router.post("/createComment/:id", gamesController.createComment);
+router.post("/createResult/:id", gamesController.createResult);
 
-// router.put("/likeComment/:id", gamesController.likeComment);
+// router.put("/likeResult/:id", gamesController.likeResult);
 
 
 module.exports = router;
