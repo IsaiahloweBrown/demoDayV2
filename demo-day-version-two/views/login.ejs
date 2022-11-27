@@ -1,15 +1,15 @@
 <%- include('partials/header') -%>
 
-<main class="container">
-  <div class="row justify-content-center">
-    <section class="col-6 mt-5">
+<main class="">
+  <div class="">
+    <section class="flex justify-center items-center min-h-screen">
       <% if (locals.messages.errors) { %> <% messages.errors.forEach( el => { %>
       <div class="alert alert-danger"><%= el.msg %></div>
       <% }) %> <% } %> <% if (locals.messages.info) { %> <%
       messages.info.forEach( el => { %>
       <div class="alert alert-info"><%= el.msg %></div>
       <% }) %> <% } %>
-      <form action="/login" method="POST">
+      <!-- <form action="/login" method="POST">
         <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label"
             >Email address</label
@@ -32,8 +32,41 @@
           />
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
-      </form>
+      </form> -->
+      <section class="card">
+        <form class=""action="/login" method="POST">
+          <!-- <section class="mb-4 mx-32 text-center">
+            <img class="logo"src="../img/b-logo.png"   alt="basketherapy-logo">
+          </section> -->
+          <section class="mb-4 mx-32">
+            <label for=exampleInputEmail1" class="block mb-2 text-sm font-medium text-white dark:text-white autofill:bg-blue-300">Email address</label>
+            <input type="email" name="email" id="base-input"  aria-describedby="emailHelp" class="bg-black w-32  border border-white text-orange-400 text-sm rounded-lg block w-full p-2.5">
+          </section>
+          <section class="mb-4 mx-32">
+            <label for="exampleInputPassword1" class="block mb-2 text-sm font-medium text-white dark:text-white autofill:bg-blue-300">Password</label>
+            <input type="password" name="password" id="base-input" class="bg-black w-32  border border-white text-orange-400 text-sm rounded-lg block w-full p-2.5">
+          </section>
+          <section class="mb-4 mx-32 text-center">
+            <button class="btn  border border-white  text-orange-400" type="submit">Submit</button>
+          </section>
+        </form>
+      </section>
     </section>
+
+    <!-- Instructions:  -->
+    <!-- Style & Formatting -->
+    <!-- 1. Center submit button in form [DONE] -->
+    <!-- 2. Complete Signup.ejs -->
+    <!-- 3. Organize Profile, Feed(allGames), Game.ejs -->
+    <!-- 4. Add a page with Results Graph  -->
+    <!-- 5. Style those pages -->
+    <!-- 6. Bonus: ***      *** -->
+
+    <!-- Question: How to change color of autofill with tailwind css -->
+
+    <!-- Behavior -->
+    <!-- 1. Connect api to existing project(API is located in DEMO DAY PROJECT file... not here yet) -->
+    <!-- 2.  -->
   </div>
 </main>
 

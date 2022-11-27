@@ -1,11 +1,47 @@
-<%- include('partials/header') -%>
+<!doctype html>
+<html>
+<head>
+    <title>Basketherapy</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.38.1/dist/full.css" rel="stylesheet" type="text/css" />
+   
+    <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body class="bg-fixed">
+   <header>
+      <section class="navbar space-x-4">
+        <section class="flex-1">
+          <a class="btn btn-ghost normal-case text-xl text-white"> <img class="logo-sm" src="./img/b-logo.png"><span class="text-white">Baske<span class="text-orange-400">therapy</span</span></a>
+        </section>
+        <section class="flex-none option-login">
+            <a href="/signup" class="btn   h-2 rounded-full ">Get Started</a>
+        </section>
+        <section class="flex-none option-login ">
+        <a href="/login" class="btn h-5 my-2 rounded-full bg-white text-black hover:bg-black hover:text-white ">Log In</a>
+        </section>
+      </section>
+   </header>
+   
 
-<main class="container">
-    <div class="row justify-content-around mt-5">
-        <a href="/login" class="col-3 btn btn-primary"> Login</a>
-        <a href="/signup" class="col-3 btn btn-primary"> Signup</a>
+   <section>
+        <section class="flex justify-center items-center h-screen">
+            <h1 class="text-5xl font-bold "><span class="text-white">Baske<span class="text-orange-400">therapy</span</span></h1>
+     
+        </section>
+
+   </section>
+   <div class="hero min-h-screen bg-base-200">
+    <div class="hero-content flex-col lg:flex-row">
+      <img src="./img/hero-img-one.png" class="max-w-sm rounded-lg shadow-2xl" />
+      <div>
+        <h1 class="text-5xl font-bold">What is Basketherapy?</h1>
+        <p class="py-6"> As an avid basketball fan, I find enjoy playing and watching basketball. I realize pickup basketball is unorganized but basketball has numerous health benefits. I am excited to present Basketherapy a way to find casual basketball games and improve your mental game. 
+        </p>
+        <a href="/signup"class="btn btn-dark hover:bg-orange-400 hover:text-black">Learn More</a>
+      </div>
     </div>
-</main>
-    
+  </div>
 
-<%- include('partials/footer') -%>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+</body>
+</html>

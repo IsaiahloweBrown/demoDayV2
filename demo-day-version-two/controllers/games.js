@@ -76,9 +76,9 @@ module.exports = {
   deleteGame: async (req, res) => {
     try {
       // Find Game by id
-      let Game = await Game.findById({ _id: req.params.id });
+      let game = await Game.findById({ _id: req.params.id });
       // Delete image from cloudinary
-      await cloudinary.uploader.destroy(Game.cloudinaryId);
+      await cloudinary.uploader.destroy(game.cloudinaryId);
       // Delete Game from db
       await Game.remove({ _id: req.params.id });
       console.log("Deleted Game");
