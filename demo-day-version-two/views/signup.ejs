@@ -1,7 +1,7 @@
 <%- include('partials/header') -%>
-    <main class="container">
-        <div class="row justify-content-center">
-            <section class="col-6 mt-5">
+    <main class="">
+        <div class="">
+            <section class="">
                 <% if (locals.messages.errors) { %>
                     <% messages.errors.forEach( el => { %>
                         <div class="alert alert-danger"><%= el.msg %></div>
@@ -12,6 +12,8 @@
                         <div class="alert alert-info"><%= el.msg %></div>
                     <% }) %>    
                 <% } %>
+            </section>
+<!-- 
                 <form action="/signup" method="POST">
                     <div class="mb-3">
                         <label for="userName" class="form-label">User Name</label>
@@ -31,8 +33,33 @@
                         <input type="password" class="form-control" id="confirmPassword" name="confirmPassword">
                       </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
-                  </form>
-            </section>
+                  </form> -->
+
+                   
+      <section class="card">
+        <form class=""action="/signup" method="POST">
+          <section class="mb-3 mx-32">
+            <label for="userName"  class="block mb-2 text-sm font-medium text-white dark:text-white autofill:bg-blue-300">User Name</label>
+            <input type="text" id="userName" name="userName" class="bg-black w-32  border border-white text-orange-400 text-sm rounded-lg block w-full p-2.5">
+          </section>
+          <section class="mb-3 mx-32">
+            <label for=exampleInputEmail1" class="block mb-2 text-sm font-medium text-white dark:text-white autofill:bg-blue-300">Email address</label>
+            <input type="email" name="email" id="base-input"  aria-describedby="emailHelp" class="bg-black w-32  border border-white text-orange-400 text-sm rounded-lg block w-full p-2.5">
+          </section>
+          <section class="mb-3 mx-32">
+            <label for="exampleInputPassword1" class="block mb-2 text-sm font-medium text-white dark:text-white autofill:bg-blue-300">Password</label>
+            <input type="password" name="password" id="base-input" class="bg-black w-32  border border-white text-orange-400 text-sm rounded-lg block w-full p-2.5">
+          </section>
+          <section class="mb-3 mx-32">
+            <label for="confirmPassword"  class="block mb-2 text-sm font-medium text-white dark:text-white autofill:bg-blue-300">Confirm Password</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" class="bg-black w-32  border border-white text-orange-400 text-sm rounded-lg block w-full p-2.5">
+          </section>
+          <section class="mb-3 mx-32 text-center">
+            <button class="btn  border border-white  text-orange-400" type="submit">Submit</button>
+          </section>
+        </form>
+      </section>
+        
         </div>
     </main>
 
