@@ -12,7 +12,8 @@ module.exports = {
   getProfile: async (req, res) => {
     try {
       const games = await Game.find({ user: req.user.id });
-      res.render("profile.ejs", { games: games, user: req.user });
+      const result = await Result.find({user: req.user.id});
+      res.render("profile.ejs", { games: games, user: req.user, result: result  });
     } catch (err) {
       console.log(err);
     }
@@ -30,6 +31,16 @@ module.exports = {
       const game = await Game.findById(req.params.id);
       const result = await Result.find({game: req.params.id});
       res.render("Game.ejs", { game: game, user: req.user, result: result });
+      
+    } catch (err) {
+      console.log(err);
+    }
+  },
+  getResults: async (req, res) => {
+    try {
+      const game = await Game.findById(req.params.id);
+      const result = await Result.find({game: req.params.id});
+      res.render("Result.ejs", { game: game, user: req.user, result: result });
       
     } catch (err) {
       console.log(err);

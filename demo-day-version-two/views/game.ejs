@@ -1,16 +1,30 @@
-<%- include('partials/header') -%>
-<div class="container">
-  <div class="row justify-content-center mt-5">
-    <div class="col-6">
-      <h2><%= game.title %></h2>
-      <img class="img-fluid" src="<%= game.image%>" />
-      <div class="row justify-content-between">
+<%- include('partials/game-header') -%>
+<div class="">
+  <div class="">
+    <div class=" card flex flex-rox bg-base-100">
+      <div class="">
+        <figure><img class="img-fluid" src="<%= game.image%>" alt="cover-image" class="h-0.5"></figure>
+        <div class="card-body">
+          <h2 class="card-title">
+            <%= game.title%>
+            <div class="badge badge-secondary">NEW</div>
+          </h2>
+          <p><%= game.description%></p>
+          <div class="card-actions justify-end">
+            <div class="badge badge-outline"><%= game.gameType%></div> 
+            <div class="badge badge-outline"><%= game.location%></div>
+          </div>
+        </div>
+
+        
+      </div>
+      <div class=">
         <form
-          class="col-1"
+          class=""
           action="/game/JoinGame/<%= game.id %>?_method=PUT"
           method="POST"
         >
-          <button class="btn btn-primary fa fa-heart" type="submit"></button>
+          <button class="btn btn-primary" type="submit">Join Game</button>
         </form>
         <h3 class="col-3">Players: <%= game.users %></h3>
         <%if(game.user == user.id){ %>
@@ -22,40 +36,63 @@
           <button class="btn btn-primary fa fa-trash" type="submit"></button>
         </form>
         <%}%>
+        <section class="">
+          <h3>Player results:</h3>
+          <ul class="results">
+    
+    
+              <li class="">
+                <% if(result.length >= 1){ %>
+                  <span>Player:<%= result[result.length-1].userName %></span>
+                  <span><%= result[result.length-1].points %> pts</span>
+                  <span><%= result[result.length-1].assists %> assists</span>
+                  <span><%= result[result.length-1].rebounds %> rebounds</span>
+                <% } %>
+              </li>
+    
+    
+          </ul>
+        </section>
       </div>
     </div>
-    <div class="col-3 mt-5">
+    <!-- <div class="col-3 mt-5">
       <p><%= game.description %></p>
-    </div>
+    </div> -->
     <!-- form for Comments -->
+  
+    
+    <form action="/game/createResult/<%= game.id %>" method="POST">
+      <!-- <section class="mb-4 mx-32 text-center">
+        <img class="logo"src="../img/b-logo.png"   alt="basketherapy-logo">
+      </section> -->
+      <section class="mb-3 mx-32">
+        <label for="points" class="block mb-2 text-sm font-medium text-white dark:text-white autofill:bg-blue-300">Points:</label>
+        <input type="number" placeholder="number of points" name="points" class="bg-black w-32  border border-white text-orange-400 text-sm rounded-lg block w-full p-2.5">
+      </section>
+      <section class="mb-3 mx-32">
+        <label for="assists" class="block mb-2 text-sm font-medium text-white dark:text-white autofill:bg-blue-300">Assists:</label>
+        <input type="number" placeholder="number of assists" name="assists" class="bg-black w-32  border border-white text-orange-400 text-sm rounded-lg block w-full p-2.5">
+      </section>
+      <section class="mb-3 mx-32">
+        <label for="rebounds" class="block mb-2 text-sm font-medium text-white dark:text-white autofill:bg-blue-300">Rebounds:</label>
+        <input type="number" placeholder="number of rebounds" name="rebounds" class="bg-black w-32  border border-white text-orange-400 text-sm rounded-lg block w-full p-2.5">
+      </section>
+      <section class="mb-3 mx-32 text-center">
+        <button class="btn bg-black w-32  border border-white hover:text-orange-400" type="submit">Submit</button>
+      </section>
+    </form>
     <div>
     
-
+<!-- 
         <form action="/game/createResult/<%= game.id %>" method="POST">
           <input type="number" placeholder="number of points" name="points">
           <input type="number" placeholder="number of assists" name="assists">
           <input type="number" placeholder="number of rebounds" name="rebounds">
           <button type="submit">Submit</button>
         </form>
-   
+    -->
     </div>
-    <section class="addedToCart text-center">
-      <h3>Delivered results</h3>
-      <ul class="results">
-      <% for(var i=0; i<result.length; i++) {%>
-
-          <li class="">
-        
-            <span><%= result[i].userName %></span>
-            <span><%= result[i].points %></span>
-            <span><%= result[i].assists %></span>
-            <span><%= result[i].rebounds %></span>
-         
-          </li>
-
-      <% } %>
-      </ul>
-    </section>
+    
     <div>
     
     
