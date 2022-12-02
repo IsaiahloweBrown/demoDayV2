@@ -1,7 +1,7 @@
 {
   "name": "binary-upload-boom",
   "version": "1.0.0",
-  "description": "100Devs Social Network",
+  "description": "Basketherapy",
   "main": "server.js",
   "scripts": {
     "start": "nodemon server.js",
@@ -10,6 +10,8 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "@mongodb-js/charts-embed-dom": "^2.3.0",
+    "axios": "^1.2.0",
     "bcrypt": "^5.0.1",
     "cloudinary": "^1.32.0",
     "connect-mongo": "^3.2.0",

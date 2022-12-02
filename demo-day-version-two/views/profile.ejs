@@ -1,12 +1,12 @@
 <%- include('partials/header') -%>
   <main>
     <div class="">
-      <!-- <div>
+      <div class="text-center">
           <p><strong>User Name</strong>: <%= user.userName %></p>
           <p><strong>Email</strong>: <%= user.email %></p>
           <a href="/logout" class="col-3 btn btn-primary">Logout</a>
-          <a href="/result" class="col-3 btn btn-primary">Results</a>
-      </div> -->
+
+      </div>
       <div class="text-center">
         <section class="text-center ">
           <h1 class="profile-header text-white text-lg">Create a Game</h1>
@@ -70,15 +70,16 @@
     <% for(var i=0; i<games.length; i++) {%>
       <li class="col-6 justify-content-between mt-5">
         <a href="/game/<%= games[i]._id%>">
-          <img class="img-fluid" src="<%= games[i].title%>">
-           <section class="">
-      <h1 class="text-white text-lg text-center">Player results:</h1>
 
-      
+      <h1 class="text-white text-lg text-center">Player results:</h1>
+      <!-- <button id=" btn refreshButton">Refresh</button> -->
+      <div id="chart" class="chart">
+  
+      </div>
       <ul class="results">
 
 
-          <li class="">
+          <li class="text-center">
         
             <span>Player:<%= result[result.length-1].userName %></span>
             <span><%= result[result.length-1].points %> pts</span>

@@ -1,4 +1,4 @@
-<%- include('partials/game-header') -%>
+<%- include('partials/header-game') -%>
 <div class="">
   <div class="">
     <div class=" card flex flex-rox bg-base-100">
@@ -7,7 +7,7 @@
         <div class="card-body">
           <h2 class="card-title">
             <%= game.title%>
-            <div class="badge badge-secondary">NEW</div>
+          
           </h2>
           <p><%= game.description%></p>
           <div class="card-actions justify-end">
@@ -19,13 +19,15 @@
         
       </div>
       <div class=">
+          <button class="btn btn-primary" type="submit"></button>
+
         <form
-          class=""
-          action="/game/JoinGame/<%= game.id %>?_method=PUT"
-          method="POST"
-        >
-          <button class="btn btn-primary" type="submit">Join Game</button>
-        </form>
+        class="col-1"
+        action="/game/JoinGame/<%= game.id %>?_method=PUT"
+        method="POST"
+      >
+        <button class="btn btn-primary material-symbols-outlined" type="submit">add</button>
+      </form>
         <h3 class="col-3">Players: <%= game.users %></h3>
         <%if(game.user == user.id){ %>
         <form
@@ -33,7 +35,7 @@
           method="POST"
           class="col-3"
         >
-          <button class="btn btn-primary fa fa-trash" type="submit"></button>
+          <button class="btn btn-primary material-symbols-outlined hover:bg-red-600" type="submit">delete</button>
         </form>
         <%}%>
         <section class="">

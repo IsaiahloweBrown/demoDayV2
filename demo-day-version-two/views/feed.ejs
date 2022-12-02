@@ -5,12 +5,12 @@
         <% for(var i=0; i<games.length; i++) {%>
           <li class="">
             <a href="/game/<%= games[i]._id%>">
-              <div class="card w-72 bg-base-100 shadow-xl">
+              <div class="card-size card w-72 bg-base-100 shadow-xl">
                 <figure><img class="img-fluid" src="<%= games[i].image%>" alt="cover-image" class="h-0.5"></figure>
                 <div class="card-body">
                   <h2 class="card-title">
                     <%= games[i].title%>
-                    <div class="badge badge-secondary">NEW</div>
+       
                   </h2>
                   <p><%= games[i].description%></p>
                   <div class="card-actions justify-end">

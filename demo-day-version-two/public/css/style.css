@@ -37,6 +37,12 @@
   .results-area {
     height: 100vh;
   }
+
+  iframe {
+    
+    width: 1080px;
+
+  }
 /*   
   .option-login {
     padding
@@ -120,9 +126,22 @@
     margin: 0 auto;
     
   }
+
+  .card-size {
+    width: 352px;
+    height: 288px;
+  }
   
   .sign-up-button {
     padding-top: -100;
+  }
+
+
+  .chart {
+    width: 600px;
+    height: 500px;
+    margin: 0 auto;
+    border-radius: 15px;
   }
   /* form input {
     background: gray;

@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const passport = require("passport");
+const path = require("path")
 //allows us to stay loggin 
 const session = require("express-session");
 //leave the broswer and still loggin 
@@ -15,6 +16,7 @@ const logger = require("morgan");
 const connectDB = require("./config/database");
 const mainRoutes = require("./routes/main");
 const gameRoutes = require("./routes/games");
+const { Script } = require("vm");
 // const resultRoutes = require("./routes/results");
 //Use .env file in config folder
 //without .env file does not work 
@@ -43,6 +45,9 @@ app.use(logger("dev"));
 //Use forms for put / delete
 app.use(methodOverride("_method"));
 
+
+app.use(express.static('static'))
+
 // Setup Sessions - stored in MongoDB
 app.use(
   //cookie on our end and user's pc
@@ -57,6 +62,7 @@ app.use(
 // Passport middleware
 app.use(passport.initialize());
 app.use(passport.session());
+
 
 //Use flash messages for errors, info, ect...
 app.use(flash());
