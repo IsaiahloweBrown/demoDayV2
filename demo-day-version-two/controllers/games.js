@@ -7,6 +7,10 @@
 const cloudinary = require("../middleware/cloudinary");
 const Game = require("../models/Game");
 const Result = require("../models/Result");
+let options = {provider: "openstreetmap"}
+const nodeGeocoder = require("node-geocoder");
+const { Geocoder } = require("node-geocoder");
+const geoCoder = nodeGeocoder(options)
 
 module.exports = {
   getProfile: async (req, res) => {
@@ -39,13 +43,14 @@ module.exports = {
   createGame: async (req, res) => {
     try {
       // Upload image to cloudinary
-      const result = await cloudinary.uploader.upload(req.file.path);
+      const result = await geoCoder.geocode(req.body.address)
+      const img = await cloudinary.uploader.upload(req.file.path);
 
       await Game.create({
         title: req.body.title,
         description: req.body.description,
-        image: result.secure_url,
-        cloudinaryId: result.public_id,
+        image: img.secure_url,
+        cloudinaryId: img.public_id,
         gameType: req.body.gameType,
         users: req.user.userName,
         location: req.body.location,

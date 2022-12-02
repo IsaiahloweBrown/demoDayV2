@@ -24,6 +24,18 @@ const PostSchema = new mongoose.Schema({
   users: {
     type: Array
   },
+  // address: {
+  //   type: String,
+  //   required: true,
+  // },
+  // lat: {
+  //   type: String,
+  //   required: true,
+  // },
+  // lng: {
+  //   type: String,
+  //   required: true,
+  // }
   location: {
     type: String,
     required: true,

@@ -1,7 +1,7 @@
 <%- include('partials/header') -%>
   <main>
     <div class="">
-      <div class="text-center">
+      <div class="text-center text-white">
           <p><strong>User Name</strong>: <%= user.userName %></p>
           <p><strong>Email</strong>: <%= user.email %></p>
           <a href="/logout" class="col-3 btn btn-primary">Logout</a>
@@ -70,22 +70,24 @@
     <% for(var i=0; i<games.length; i++) {%>
       <li class="col-6 justify-content-between mt-5">
         <a href="/game/<%= games[i]._id%>">
-
-      <h1 class="text-white text-lg text-center">Player results:</h1>
-      <!-- <button id=" btn refreshButton">Refresh</button> -->
-      <div id="chart" class="chart">
-  
-      </div>
-      <ul class="results">
+        
+          
+      
+            <h1 class="text-white text-lg text-center">Player results:</h1>
+            <!-- <button id=" btn refreshButton">Refresh</button> -->
+            <div id="chart" class="chart">
+        
+            </div>
+            <ul class="results">
 
 
           <li class="text-center">
-        
-            <span>Player:<%= result[result.length-1].userName %></span>
-            <span><%= result[result.length-1].points %> pts</span>
-            <span><%= result[result.length-1].assists %> assists</span>
-            <span><%= result[result.length-1].rebounds %> rebounds</span>
-         
+            <% if(result.userName === user.userName) {%>
+              <span>Player:<%= result[result.length-1].userName %></span>
+              <span><%= result[result.length-1].points %> pts</span>
+              <span><%= result[result.length-1].assists %> assists</span>
+              <span><%= result[result.length-1].rebounds %> rebounds</span>
+            <% } %>
           </li>
 
 
