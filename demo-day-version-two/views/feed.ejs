@@ -1,11 +1,11 @@
 <%- include('partials/header') -%>
-  <div class="container">
+  <div class="">
     <div class="">
-      <ul class="flex flex-row gap-x-8">
+      <ul class="grid grid-cols-4 gap-4">
         <% for(var i=0; i<games.length; i++) {%>
           <li class="">
             <a href="/game/<%= games[i]._id%>">
-              <div class="card-size card w-72 bg-base-100 shadow-xl">
+              <div class="outline-white card-size card w-72  bg-base-100 shadow-xl">
                 <figure><img class="img-fluid" src="<%= games[i].image%>" alt="cover-image" class="h-0.5"></figure>
                 <div class="card-body">
                   <h2 class="card-title">

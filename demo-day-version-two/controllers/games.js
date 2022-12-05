@@ -1,16 +1,21 @@
-//controllers = instructionns
 
 
-//controllers = instructionns
+//api 
 
 
+
+
+
+
+
+//controllers = instructions
 const cloudinary = require("../middleware/cloudinary");
 const Game = require("../models/Game");
 const Result = require("../models/Result");
-let options = {provider: "openstreetmap"}
-const nodeGeocoder = require("node-geocoder");
-const { Geocoder } = require("node-geocoder");
-const geoCoder = nodeGeocoder(options)
+// let options = {provider: "openstreetmap"}
+// const nodeGeocoder = require("node-geocoder");
+// const { Geocoder } = require("node-geocoder");
+// const geoCoder = nodeGeocoder(options)
 
 module.exports = {
   getProfile: async (req, res) => {

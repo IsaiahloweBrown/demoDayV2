@@ -4,7 +4,7 @@
       <div class="text-center text-white">
           <p><strong>User Name</strong>: <%= user.userName %></p>
           <p><strong>Email</strong>: <%= user.email %></p>
-          <a href="/logout" class="col-3 btn btn-primary">Logout</a>
+          <a href="/logout" class="col-3 btn btn-outline bg-black text-orange-400 hover:bg-white">Logout</a>
 
       </div>
       <div class="text-center">
@@ -19,7 +19,7 @@
       </div>
   </div>
 
-  <section class=" flex flex-row card">
+  <section class=" flex flex-row card ">
     <form action="/game/createGame" enctype="multipart/form-data" method="POST">
       <!-- <section class="mb-4 mx-32 text-center">
         <img class="logo"src="../img/b-logo.png"   alt="basketherapy-logo">
@@ -98,7 +98,7 @@
     <% } %>
     </ul>
     <div class="text-center">
-      <a class="btn btn-primary" href="/feed">Return to Feed</a>
+      <a class="btn btn-outline bg-black text-orange-400 hover:bg-white" href="/feed">Return to Feed</a>
       
     </div>  
   </div>  
