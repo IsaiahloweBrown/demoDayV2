@@ -17,7 +17,7 @@ const Result = require("../models/Result");
 // const nodeGeocoder = require("node-geocoder");
 // const { Geocoder } = require("node-geocoder");
 // const geoCoder = nodeGeocoder(options);
-// const ObjectId = require("mongodb").ObjectIdl
+// const ObjectId = require("mongodb").ObjectId
 
 module.exports = {
   getProfile: async (req, res) => {

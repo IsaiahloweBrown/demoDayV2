@@ -26,19 +26,19 @@
       </section> -->
       <section class="mb-3 mx-45">
         <label for="title" class="block mb-2 text-sm font-medium text-white dark:text-white autofill:bg-blue-300">Title</label>
-        <input type="text" name="title" id="base-input" class="bg-black w-32  border border-white text-orange-400 text-sm rounded-lg block w-full p-2.5">
+        <input type="text" name="title" id="base-input" class="bg-black w-32  border border-white text-sm rounded-lg block w-full p-2.5">
       </section>
       <section class="mb-3 mx-45">
         <label for="description" class="block mb-2 text-sm font-medium text-white dark:text-white autofill:bg-blue-300">Description</label>
-        <input type="text" name="description" id="base-input" class="bg-black w-32  border border-white text-orange-400 text-sm rounded-lg block w-full p-2.5">
+        <input type="text" name="description" id="base-input" class="bg-black w-32  border border-white text-sm rounded-lg block w-full p-2.5">
       </section>
       <section class="mb-3 mx-45">
         <label for="imgUpload" class="block mb-2 text-sm font-medium text-white dark:text-white autofill:bg-blue-300">Image</label>
-        <input type="file" class="bg-black w-32  border border-white text-orange-400 text-sm rounded-lg block w-full p-2.5" id="imageUpload" name="file">
+        <input type="file" class="bg-black w-32  border border-white text-sm rounded-lg block w-full p-2.5" id="imageUpload" name="file">
       </section>
       <section class="mb-3 mx-45">
         <label for="gameType" class="block mb-2 text-sm font-medium text-white dark:text-white autofill:bg-blue-300">Game Type</label>
-        <select type="number" name="gameType" id="gameType" class="bg-black w-32  border border-white text-orange-400 text-sm rounded-lg block w-full p-2.5">
+        <select type="number" name="gameType" id="gameType" class="bg-black w-32  border border-white text-sm rounded-lg block w-full p-2.5">
           <option value="2">1v1</option>
           <option value="4">2v2</option>
           <option value="6">3v3</option>
@@ -48,24 +48,25 @@
       </section>
       <section class="mb-3 mx-32">
         <label for="base-input" class="block mb-2 text-sm font-medium text-white dark:text-white autofill:bg-blue-300">Date & Time</label>
-        <input type="datetime-local" name="dateAndTime" id="dateAndTime" class="bg-black w-32  border border-white text-orange-400 text-sm rounded-lg block w-full p-2.5">
+        <input type="datetime-local" name="dateAndTime" id="dateAndTime" class="bg-black w-32  border border-white text-sm rounded-lg block w-full p-2.5">
       </section>
       <section class="mb-3 mx-32">
         <label for="location" class="block mb-2 text-sm font-medium text-white dark:text-white autofill:bg-blue-300">Location</label>
-            <select type="number" name="location" id="location" class="bg-black w-32  border border-white text-orange-400 text-sm rounded-lg block w-full p-2.5">
+            <select type="number" name="location" id="location" class="bg-black w-32  border border-white text-sm rounded-lg block w-full p-2.5">
               <option value="Philadelphia,PA,US">Philadelphia, PA, US</option>
               <option value="Pittsburg,PA,US">Pittsburg, PA, US</option>
               <option value="Atlanta,GA,US">Atlanta, GA, US</option>
             </select>
       </section>
       <section class="mb-3 mx-32 text-center">
-        <button class="btn  border border-white  text-orange-400" type="submit">Submit</button>
+        <button class="btn  border border-white  text-white hover:text-orange-400 hover:border-orange-400" type="submit">Submit</button>
       </section>
     </form>
   </section>
   </main>
 
   <section class="results-area">
+    <h1 class="text-white text-lg text-center">Player results:</h1>
     <ul class="row list-unstyled">
     <% for(var i=0; i<games.length; i++) {%>
       <li class="col-6 justify-content-between mt-5">
@@ -73,7 +74,7 @@
         
           
       
-            <h1 class="text-white text-lg text-center">Player results:</h1>
+       
             <!-- <button id=" btn refreshButton">Refresh</button> -->
             <div id="chart" class="chart">
         
@@ -81,9 +82,9 @@
             <ul class="results">
 
 
-          <li class="text-center">
-            <% if(result.userName === user.userName) {%>
-              <span>Player:<%= result[result.length-1].userName %></span>
+          <li class="text-center text-white">
+            <% if(result[i].userName === user.userName) {%>
+              <span>Player: <%= result[result.length-1].userName %></span>
               <span><%= result[result.length-1].points %> pts</span>
               <span><%= result[result.length-1].assists %> assists</span>
               <span><%= result[result.length-1].rebounds %> rebounds</span>
