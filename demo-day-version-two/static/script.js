@@ -1,4 +1,5 @@
 const ChartsEmbedSDK = window.ChartsEmbedSDK;
+// const userName = require("controllers\games")
 
 const sdk = new ChartsEmbedSDK({
   baseUrl: 'https://charts.mongodb.com/charts-basketherapy-gzkyj',
@@ -7,7 +8,6 @@ const sdk = new ChartsEmbedSDK({
 // embed a chart
 const chart = sdk.createChart({
   chartId: '638990a5-6656-445d-8ad2-6d93dc12b104',
-  theme: "Dark"
 });
 
 // render the chart into a container
@@ -26,11 +26,11 @@ chart
 //     chart.setFilter({});
 //   } else {
 //     const userName = (userNameSelect.value)
-//     chart.setFilter( { userName: userName })
+//     chart.setFilter( { userName: "21savage" })
 //   }
 // })
 
-// const axios = require('axios');
+
 
 
 

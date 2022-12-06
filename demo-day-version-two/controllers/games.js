@@ -12,10 +12,12 @@
 const cloudinary = require("../middleware/cloudinary");
 const Game = require("../models/Game");
 const Result = require("../models/Result");
+// const API_KEY = require("../config/apikey.js").apikey
 // let options = {provider: "openstreetmap"}
 // const nodeGeocoder = require("node-geocoder");
 // const { Geocoder } = require("node-geocoder");
-// const geoCoder = nodeGeocoder(options)
+// const geoCoder = nodeGeocoder(options);
+// const ObjectId = require("mongodb").ObjectIdl
 
 module.exports = {
   getProfile: async (req, res) => {
@@ -48,7 +50,7 @@ module.exports = {
   createGame: async (req, res) => {
     try {
       // Upload image to cloudinary
-      const result = await geoCoder.geocode(req.body.address)
+      // const result = await geoCoder.geocode(req.body.address)
       const img = await cloudinary.uploader.upload(req.file.path);
 
       await Game.create({
@@ -61,6 +63,7 @@ module.exports = {
         location: req.body.location,
         dateAndTime: req.body.dateAndTime,
         user: req.user.id,
+        
       });
       console.log("Game has been added!");
       res.redirect("/profile");

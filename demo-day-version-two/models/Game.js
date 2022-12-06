@@ -35,7 +35,7 @@ const PostSchema = new mongoose.Schema({
   // lng: {
   //   type: String,
   //   required: true,
-  // }
+  // },
   location: {
     type: String,
     required: true,

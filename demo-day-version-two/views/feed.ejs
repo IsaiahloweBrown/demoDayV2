@@ -5,8 +5,8 @@
         <% for(var i=0; i<games.length; i++) {%>
           <li class="">
             <a href="/game/<%= games[i]._id%>">
-              <div class="outline-white card-size card w-72  bg-base-100 shadow-xl">
-                <figure><img class="img-fluid" src="<%= games[i].image%>" alt="cover-image" class="h-0.5"></figure>
+              <div class=" card-size card w-72  bg-base-100 shadow-xl">
+                <figure><img class="img-fluid w-45 h-40" src="<%= games[i].image%>" alt="cover-image" class="h-0.5"></figure>
                 <div class="card-body">
                   <h2 class="card-title">
                     <%= games[i].title%>
