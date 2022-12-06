@@ -20,15 +20,15 @@ chart
 
 
 //filtering 
-// const userNameSelect = document.getElementById("userName")
-// userNameSelect.addEventListener("change", async (e) => {
-//   if (yearSelect.value == "") {
-//     chart.setFilter({});
-//   } else {
-//     const userName = (userNameSelect.value)
-//     chart.setFilter( { userName: "21savage" })
-//   }
-// })
+const userNameSelect = document.getElementById("userName")
+userNameSelect.addEventListener("change", async (e) => {
+  if (yearSelect.value == "") {
+    chart.setFilter({});
+  } else {
+    const userName = (userNameSelect.value)
+    chart.setFilter( { userName: "21savage" })
+  }
+})
 
 
 
