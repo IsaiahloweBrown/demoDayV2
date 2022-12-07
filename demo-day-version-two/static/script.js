@@ -21,7 +21,10 @@ async function renderChart() {
     //   document.getElementById('refreshButton').addEventListener('click', () => chart.refresh());
     // }
   
-  
+  document.getElementById("refresh").addEventListener("click", () => {
+    chart
+    .render(document.getElementById('chart'))
+  });
   //filtering 
   const gameSelect = document.getElementById("game-filter")
   gameSelect.addEventListener("change", async (e) => {
