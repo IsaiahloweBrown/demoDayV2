@@ -101,6 +101,11 @@
     .sign-in-link {
       color:  rgb(244, 138, 29);
     }
+
+    .card-dimension {
+      height: 100px;
+      width: 200px;
+    }
     
     .card {
       /* Rectangle 9 */

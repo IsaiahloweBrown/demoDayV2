@@ -1,4 +1,4 @@
-<%- include('partials/header') -%>
+<%- include('partials/header-profile') -%>
   <main>
     <div class="">
       <div class="text-center text-white">
@@ -77,9 +77,8 @@
         ><span>Filter By Games </span>
         <select id="game-filter">
           <option value="">select a game</option>
-          <option value="BenSimmons">BenSimmons</option>
           <% for(let i = 0; i < allGames.length; i++) {%>
-              <option value="<%= allGames[i].id %>"><%= allGames[i].id %></option>
+              <option value="<%= allGames[i].id %>"><%= allGames[i].title %></option>
           <% }%>
         </select>
       </label>
