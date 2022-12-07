@@ -12,6 +12,7 @@
 const cloudinary = require("../middleware/cloudinary");
 const Game = require("../models/Game");
 const Result = require("../models/Result");
+const User = require("../models/User");
 // const API_KEY = require("../config/apikey.js").apikey
 // let options = {provider: "openstreetmap"}
 // const nodeGeocoder = require("node-geocoder");
@@ -19,12 +20,24 @@ const Result = require("../models/Result");
 // const geoCoder = nodeGeocoder(options);
 // const ObjectId = require("mongodb").ObjectId
 
+
 module.exports = {
   getProfile: async (req, res) => {
     try {
+      const allGames = await Game.find({ users: req.user.userName });
       const games = await Game.find({ user: req.user.id });
-      const result = await Result.find({user: req.user.id });
-      res.render("profile.ejs", { games: games, user: req.user, result: result });
+      const result = await Result.find({ user: req.user.id });
+      res.render("profile.ejs", { games: games, user: req.user, result: result , allGames: allGames });
+    } catch (err) {
+      console.log(err);
+    }
+  },
+  getCharts: async (req, res) => {
+    try {
+      const allGames = await Game.find({ users: req.user.userName });
+      const games = await Game.find({ user: req.user.id });
+      const result = await Result.find({ user: req.user.id });
+      res.render("profile.ejs", { games: games, user: req.user, result: result , allGames: allGames });
     } catch (err) {
       console.log(err);
     }

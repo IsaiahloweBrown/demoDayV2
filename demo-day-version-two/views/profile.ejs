@@ -67,8 +67,61 @@
 
   <section class="results-area">
     <h1 class="text-white text-lg text-center">Player results:</h1>
+    <div id="nav">
+      <label
+        ><span>REFRESH CHART </span>
+        <button id="refresh">⟳</button>
+      </label>
+   
+      <label class="text-white"
+        ><span>Filter By Games </span>
+        <select id="game-filter">
+          <option value="">select a game</option>
+          <option value="BenSimmons">BenSimmons</option>
+          <% for(let i = 0; i < allGames.length; i++) {%>
+              <option value="<%= allGames[i].id %>"><%= allGames[i].id %></option>
+          <% }%>
+        </select>
+      </label>
+      <label class="theme-label"
+        ><span>THEME </span>
+        <label class="switch">
+          <input id="themeSwitch" type="checkbox" />
+          <span class="slider round"></span>
+        </label>
+        <span id="themeEmoji" class="theme-label"></span>
+      </label>
+    </div>
+
+    <div class="body-content">
+      <div id="chart"></div>
+      <div class="chartInfo">
+        <h3 class="chart-title">CHART OPTIONS</h3>
+        <table>
+          <tr>
+            <th>Current Max Data Age (in secs)</th>
+            <td id="currentMaxDataAge">3600</td>
+          </tr>
+          <tr>
+            <th>Current Theme</th>
+            <td id="currentTheme">light</td>
+          </tr>
+          <tr>
+            <th>Current Filter</th>
+            <td id="currentFilter">None</td>
+          </tr>
+        </table>
+
+        <button id="chartDataButton">
+          <span id="chartDataButtonText">Show</span> Chart Data
+        </button>
+        
+        <json-viewer id="jsonViewer">{}</json-viewer>
+      </div>
+    </div>
+
     <ul class="row list-unstyled">
-    <% for(var i=0; i<games.length; i++) {%>
+    <% for(let i=0; i<games.length; i++) {%>
       <li class="col-6 justify-content-between mt-5">
         <a href="/game/<%= games[i]._id%>">
         
@@ -84,10 +137,10 @@
 
           <li class="text-center text-white">
             <% if(result[i].userName === user.userName) {%>
-              <span>Player: <%= result[result.length-1].userName %></span>
-              <span><%= result[result.length-1].points %> pts</span>
-              <span><%= result[result.length-1].assists %> assists</span>
-              <span><%= result[result.length-1].rebounds %> rebounds</span>
+              <span>Player: <%= result[i].userName %></span>
+              <span><%= result[i].points %> pts</span>
+              <span><%= result[i].assists %> assists</span>
+              <span><%= result[i].rebounds %> rebounds</span>
             <% } %>
           </li>
 
